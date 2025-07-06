@@ -1,56 +1,80 @@
-# Credit-Card-Fraud-Detection
+# 💳 Credit Card Fraud Detection System
 
-## Project Overview
+## 🚀 Overview
 
-This project implements a robust Credit Card Fraud Detection System designed to identify and flag fraudulent transactions using machine learning. Developed as a web-based application with a Streamlit frontend and a Python backend, it provides financial analysts and security teams with real-time insights into potentially suspicious activity. The system analyzes transaction patterns and behaviors to distinguish between legitimate and illicit activities, aiming to minimize financial losses and enhance security.
+This project presents a **streamlined Credit Card Fraud Detection System** that leverages machine learning to detect and flag potentially fraudulent credit card transactions.
 
-The primary goal is to build an intelligent, accessible, and user-friendly system that can learn from historical transaction patterns and accurately predict the likelihood of fraud, even with imbalanced datasets.
+The application combines a **Streamlit-powered web interface** with a Python backend to deliver real-time insights, enabling security teams and analysts to make swift, informed decisions. It effectively learns transaction behavior and detects anomalies, even within imbalanced datasets.
 
-## Features:
+---
 
-User Authentication: Secure login functionality for registered users and administrative authentication for managing models and users.
+## 🌟 Core Features
 
-Dataset Upload: Users can securely upload credit card transaction data in CSV format for analysis.
+- 🔐 **User Login System**: Secure authentication for users, with admin-level privileges for model and user management.
+- 📁 **CSV Upload**: Seamless data upload to feed the fraud detection engine.
+- 🧠 **Fraud Analysis**: Predicts whether a transaction is `legitimate` or `fraudulent` using a pre-trained Logistic Regression model.
+- 📈 **Prediction Output & Metrics**:
+  - Highlights suspicious entries
+  - Provides evaluation metrics (Accuracy, Precision, Recall, F1-Score)
+  - Displays a Confusion Matrix for transparency
+- ⚡ **Live Feedback**: Shows total transactions, fraud count, and model confidence instantly after upload.
+- 🛡 **Admin Controls**: Allows admins to upload and manage models and scalers, with version control support.
+- 🎨 **User Preferences**: Customize experience with light/dark mode and alert settings.
+- 🧹 **Preprocessing Pipeline**: Automatically scales and prepares transaction data for analysis.
+- ⚖️ **Class Imbalance Handling**: Uses undersampling (via `imblearn`) to balance fraud vs. legitimate cases during training.
 
-Fraud Prediction: Utilizes a pre-trained Logistic Regression model to classify transactions as 'fraudulent' or 'legitimate' in real-time.
+---
 
-Prediction Output & Evaluation Display: Clearly presents transaction predictions, highlights suspicious transactions, and shows key evaluation metrics (Accuracy, Precision, Recall, F1-Score) along with a Confusion Matrix visualization.
+## 📸 Screenshots
 
-Real-Time Feedback: Provides immediate highlighting of suspicious transactions and a dashboard summary (total transactions, fraud count, model confidence).
+### 🔐 Login Interface  
+Secure login system for both regular users and administrators.  
+![image alt](https://github.com/rohanpahari3/Credit-Card-Fraud-Detection/blob/ef1bb7276e804183c87e9ca668568de109f31de2/Screenshot%202025-07-06%20194110.png)
 
-Model Management: (Admin-only) Allows administrators to upload and manage updated ML models and scalers with version tracking.
+### ✅ Legitimate Transaction Output  
+Displays transactions that are predicted to be safe.  
+![image alt](https://github.com/rohanpahari3/Credit-Card-Fraud-Detection/blob/a29997a3592e5d1d5766eedc745b8bc2be1fe01c/Screenshot%202025-07-06%20194215.png)
 
-Settings & Customization: Users can adjust preferences like light/dark mode and notification settings.
+### 🚨 Fraudulent Transaction Output  
+Highlights potentially fraudulent activities.  
+![image alt](https://github.com/rohanpahari3/Credit-Card-Fraud-Detection/blob/a29997a3592e5d1d5766eedc745b8bc2be1fe01c/Screenshot%202025-07-06%20194245.png)
 
-Data Preprocessing: Handles feature scaling and prepares raw transaction data for model training.
+### 🧮 Confusion Matrix  
+Visual representation of the model’s classification performance.  
+![image alt](https://github.com/rohanpahari3/Credit-Card-Fraud-Detection/blob/a29997a3592e5d1d5766eedc745b8bc2be1fe01c/Screenshot%202025-07-06%20194309.png)
 
-Imbalanced Data Handling: Employs techniques (e.g., undersampling) to address the class imbalance inherent in fraud detection datasets.
+---
 
+## 🏗 Architecture
 
-## System Architecture
-The Credit Card Fraud Detection System follows a simple yet effective client-server architecture, combining a minimal frontend with a robust backend that handles all machine learning logic.
+The system is based on a **client-server model**, separating UI and backend responsibilities for modularity and performance.
 
-Frontend (Streamlit): Provides a clean, responsive interface for uploading data, displaying results, and user interaction.
+- **Frontend**: Built with **Streamlit** to offer a clean and dynamic user interface.
+- **Backend**: Developed in **Python**, it:
+  - Processes uploaded files
+  - Executes the Logistic Regression model
+  - Outputs results and performance metrics
+- **Machine Learning Core**: Implements scikit-learn to train and deploy fraud detection models.
 
-Backend (Python with scikit-learn): Processes uploaded data, loads the trained Logistic Regression model, performs classification, and handles core logic.
+---
 
-Machine Learning Module: Built using scikit-learn and trained on labeled transaction data, specifically using a Logistic Regression model for fraud probability prediction.
+## 🧰 Tech Stack
 
-## Technologies Used:
+| Category              | Tools & Libraries                                |
+|-----------------------|--------------------------------------------------|
+| Language              | Python                                           |
+| Framework             | Streamlit                                       |
+| Data Handling         | pandas, numpy                                   |
+| ML Libraries          | scikit-learn, imbalanced-learn (`imblearn`)     |
+| Visualization         | matplotlib, seaborn                             |
+| Versioning            | Git, GitHub                                     |
+| Package Management    | pip                                             |
 
-Programming Language: Python
-Web Framework: Streamlit
-Data Manipulation: pandas, numpy
-Machine Learning: scikit-learn, imblearn (for imbalanced data)
-Data Visualization: matplotlib, seaborn
-Version Control: Git, GitHub
-Environment Management: pip
+---
 
+## ▶️ How to Run
 
-Start the Streamlit application:
+To start the app locally, run:
+
+```bash
 streamlit run app.py
-
-Access the application:
-Open your web browser and navigate to the URL provided by Streamlit (usually http://localhost:8501).
-
-Feel free to star this repository if you found it helpful!
